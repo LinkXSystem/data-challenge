@@ -1,0 +1,56 @@
+@import '../../assets/scss/mixins.scss';
+
+.container {
+  @include flex-container;
+
+  position: relative;
+  padding: 20px;
+
+  &::before,
+  &::after {
+    content: '';
+
+    display: block;
+    position: absolute;
+    top: -1000px;
+    left: 50%;
+    z-index: -1;
+    transform: rotate(-30deg);
+  }
+
+  &::before {
+    width: 2000px;
+    height: 2000px;
+    margin-top: -770px;
+    margin-left: -1140px;
+    border-radius: 160px;
+    background-color: #0088fe;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  &::after {
+    width: 1600px;
+    height: 1600px;
+    margin-top: -520px;
+    margin-left: -300px;
+    border-radius: 100px;
+    background: #00c49f;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  ul {
+    li > a {
+      @include font($color: #ffffff);
+      text-decoration: none;
+    }
+  }
+}
+
+.navbar {
+  @include flex-container;
+
+  img {
+    width: 64px;
+    height: 64px;
+  }
+}
