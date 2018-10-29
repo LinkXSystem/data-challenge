@@ -1,0 +1,17 @@
+.article-data-tooltip {
+  padding-inline-start: 0px;
+
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    span:nth-of-type(1) {
+      color: #0088fe;
+    }
+  }
+
+  li + li {
+    margin-top: 0.5em;
+  }
+}

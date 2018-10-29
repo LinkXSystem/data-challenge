@@ -3,6 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 // scss 模块
 import './assets/scss/reset.scss';
+import './assets/scss/chart.scss';
 // react 组件
 import App from './App';
 import * as serviceWorker from './serviceWorker';
