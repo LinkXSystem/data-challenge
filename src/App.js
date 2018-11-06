@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Header from './components/layout/header';
+import Header from './components/layouts/header';
 import { BrowserRouter, Route } from 'react-router-dom';
 
 import logo from './assets/images/logo.svg';

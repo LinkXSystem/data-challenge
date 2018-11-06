@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+
 import styles from './main.module.scss';
 
-import { Chart, Axis, Bar, Tooltip, Legend } from 'viser-react';
-import DataSet from '@antv/data-set';
+import DataStatistics from '../components/system/data-statistics';
+import Markdown from '../components/universal/markdown';
+import Qrcode from '../components/universal/qrcode';
 
 export default class Template extends Component {
   constructor(props) {
@@ -29,62 +31,33 @@ export default class Template extends Component {
           date: '2018年10月30日',
         },
       ],
-      scale: [
-        {
-          dataKey: 'words',
-        },
-      ],
-      template: `
-        <ul class="article-data-tooltip">
-          <li>
-            <span>文章：</span>
-            <span>{title}</span>
-          </li>
-          <li>
-            <span>词数：</span>
-            <span>{words}</span>
-          </li>
-        </ul>
-      `,
+      html: '> G2 数据可视化项目',
     };
   }
 
-  async componentDidMount() {}
-
-  tooltip(title, words) {
-    return {
-      title,
-      words,
-    };
-  }
+  componentDidMount() {}
 
   render() {
-    const { data, scale, template } = this.state;
+    const { data, html } = this.state;
 
     return (
       <section className={styles.container}>
-        <Chart forceFit height={420} data={data} scale={scale} renderer="svg">
-          <Tooltip
-            itemTpl={template}
-            showTitle={false}
-            g2TooltipList={{ 'padding-inline-start': '0px' }}
-          />
-          <Legend />
-          <Axis dataKey="words" show={false} />
-          <Axis dataKey="date" label={{ textStyle: { fill: '#404040' } }} />
-          <Bar
-            position="date*words"
-            tooltip={[
-              'title*words',
-              (title, words) => this.tooltip(title, words),
-            ]}
-            size={1}
-            color="#00c49f"
-          />
-        </Chart>
+        <DataStatistics data={data} />
+        <div className={styles.article}>
+          <div className={styles.article.header}>
+            <div>
+              <h3>Linksystem & Blog 创作思路</h3>
+              <ul>
+                <li>zhi</li>
+                <li>2018年10月20日</li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <Markdown html={html} />
+          </div>
+        </div>
       </section>
     );
   }
 }
-
-Template.propTypes = {};
