@@ -1,0 +1,28 @@
+@import './assets/scss/variables.scss';
+
+.search {
+  label {
+    padding: 0.25em;
+
+    i {
+      color: #ffffff;
+    }
+
+    input {
+      margin-left: 1em;
+      border: 0px;
+      outline: 0px;
+      background-color: inherit;
+    }
+
+    transition: all 0.3s ease-in;
+  }
+
+  label:hover {
+    border: 1px solid $border-color;
+  }
+
+  i {
+    font-size: 1.25em;
+  }
+}

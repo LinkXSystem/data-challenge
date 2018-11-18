@@ -9,7 +9,7 @@ import './assets/scss/chart.scss';
 import './assets/font/iconfont.css';
 
 // react 组件
-import App from './App';
+import App from './app';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<App />, document.getElementById('root'));

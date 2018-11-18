@@ -13,6 +13,8 @@ import {
   Editor,
 } from './routes';
 
+import styles from './app.module.scss';
+
 export default class App extends Component {
   constructor() {
     super();
@@ -45,7 +47,15 @@ export default class App extends Component {
       <section className="container">
         <BrowserRouter>
           <React.Fragment>
-            <Header routers={routers} marker={marker} />
+            <Header routers={routers} marker={marker}>
+              <div className={styles.search}>
+                <label>
+                  <i className="linksystem icon-search1" />
+                  <input type="text" />
+                </label>
+                <i className="linksystem icon-github" />
+              </div>
+            </Header>
             <Switch>
               <Route exact path="/" component={Main} />
               <Route path="/article/:uuid/detail" component={ArticleDetail} />

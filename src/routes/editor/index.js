@@ -12,11 +12,11 @@ export default class Editor extends Component {
         <div className={styles.editor}>
           <div className={styles.toolbar}>
             <div>
-              <i className="anticon icon-plussquareo" />
-              <i className="anticon icon-link" />
+              <i className="linksystem icon-plussquareo" />
+              <i className="linksystem icon-link" />
             </div>
             <div>
-              <i className="anticon icon-cloudo" />
+              <i className="linksystem icon-cloudo" />
             </div>
           </div>
           <textarea name="inspiration" />
