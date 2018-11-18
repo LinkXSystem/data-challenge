@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 import styles from './main.module.scss';
 
@@ -7,7 +6,7 @@ import DataStatistics from '../models/data-statistics';
 import Markdown from '../components/markdown';
 // import Qrcode from '../components/qrcode';
 
-export default class Template extends Component {
+export default class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {

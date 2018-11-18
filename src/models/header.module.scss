@@ -53,4 +53,54 @@
     width: 64px;
     height: 64px;
   }
+
+  ul {
+    @include flex-container;
+
+    li {
+      position: relative;
+      padding: 5px 0px;
+
+      a {
+        font-size: 18px;
+      }
+    }
+
+    li::before,
+    li::after {
+      position: absolute;
+
+      display: block;
+      content: '';
+      width: 40%;
+      height: 1px;
+      opacity: 0;
+
+      background-color: #ffffff;
+
+      transition: all 0.3s ease-in-out;
+    }
+
+    li::before {
+      top: 0px;
+      left: 0px;
+      transform: translate(-100%);
+    }
+
+    li::after {
+      bottom: 0px;
+      right: 0px;
+      transform: translate(100%);
+    }
+
+    li:hover::before,
+    li:hover::after {
+      transform: inherit;
+      opacity: 1;
+    }
+
+    li + li {
+      margin-left: 20px;
+    }
+  }
 }

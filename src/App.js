@@ -3,7 +3,7 @@ import Header from './models/header';
 import { BrowserRouter, Route } from 'react-router-dom';
 
 import logo from './assets/images/logo.svg';
-import { Main } from './routes';
+import { Main, Article, Column } from './routes';
 
 export default class App extends Component {
   constructor() {
@@ -14,6 +14,16 @@ export default class App extends Component {
           label: 'Data Visualization',
           icon: '',
           href: '/',
+        },
+        {
+          label: 'Article',
+          icon: '',
+          href: '/article',
+        },
+        {
+          label: 'Column',
+          icon: '',
+          href: '/column',
         },
       ],
       marker: logo,
@@ -30,6 +40,8 @@ export default class App extends Component {
             <Header routers={routers} marker={marker} />
             <div>
               <Route exact path="/" component={Main} />
+              <Route path="/article" component={Article} />
+              <Route path="/column" component={Column} />
             </div>
           </div>
         </BrowserRouter>
