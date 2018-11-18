@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 
 import styles from './main.module.scss';
 
-import DataStatistics from '../components/system/data-statistics';
-import Markdown from '../components/universal/markdown';
-import Qrcode from '../components/universal/qrcode';
+import DataStatistics from '../models/data-statistics';
+import Markdown from '../components/markdown';
+// import Qrcode from '../components/qrcode';
 
 export default class Template extends Component {
   constructor(props) {
