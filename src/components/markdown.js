@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import marked from 'marked';
 
-import styles from './markdown.scss';
+// import styles from './markdown.scss';
 
 export default class Markdown extends Component {
   constructor(props) {

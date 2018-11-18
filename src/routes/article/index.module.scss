@@ -34,5 +34,17 @@
     ul {
       margin-bottom: 0.5em;
     }
+
+    h3 {
+      color: $title-color;
+    }
+
+    ul {
+      color: $keyword-color;
+    }
+
+    p {
+      color: $content-color;
+    }
   }
 }

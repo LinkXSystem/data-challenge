@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from './models/header';
+import Footer from './models/footer';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import logo from './assets/images/logo.svg';
@@ -43,7 +44,7 @@ export default class App extends Component {
     return (
       <section className="container">
         <BrowserRouter>
-          <div>
+          <React.Fragment>
             <Header routers={routers} marker={marker} />
             <Switch>
               <Route exact path="/" component={Main} />
@@ -53,7 +54,8 @@ export default class App extends Component {
               <Route path="/column" component={Column} />
               <Route path="/editor" component={Editor} />
             </Switch>
-          </div>
+            <Footer />
+          </React.Fragment>
         </BrowserRouter>
       </section>
     );

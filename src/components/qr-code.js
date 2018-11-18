@@ -3,7 +3,7 @@ import _ from 'qrcode';
 
 import PropTypes from 'prop-types';
 
-export default class Qrcode extends Component {
+export default class QRCode extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -36,7 +36,7 @@ export default class Qrcode extends Component {
   }
 }
 
-Qrcode.defaultProps = {
+QRCode.defaultProps = {
   config: {
     margin: 2,
     scale: 4,
@@ -48,7 +48,7 @@ Qrcode.defaultProps = {
   },
 };
 
-Qrcode.propTypes = {
+QRCode.propTypes = {
   content: PropTypes.string.isRequired,
   config: PropTypes.object,
 };

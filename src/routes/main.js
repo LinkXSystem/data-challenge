@@ -4,7 +4,7 @@ import styles from './main.module.scss';
 
 import DataStatistics from '../models/data-statistics';
 import Markdown from '../components/markdown';
-import Qrcode from '../components/qrcode';
+import QRCode from '../components/qr-code';
 
 export default class Main extends Component {
   constructor(props) {
@@ -69,7 +69,7 @@ export default class Main extends Component {
                 <li>2018/10/20</li>
               </ul>
             </div>
-            <Qrcode content={'complex star'} />
+            <QRCode content={'complex star'} />
           </div>
           <div className={styles.content}>
             <Markdown html={html} />

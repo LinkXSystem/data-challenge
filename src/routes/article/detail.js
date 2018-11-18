@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import Markdown from '../../components/markdown';
-import Qrcode from '../../components/qrcode';
+// import Markdown from '../../components/markdown';
+import QRCode from '../../components/qr-code';
 
 import styles from './detail.module.scss';
 
@@ -27,7 +27,7 @@ export default class ArticleDetail extends Component {
                 <li>2018/10/20</li>
               </ul>
             </div>
-            <Qrcode content={'complex star'} />
+            <QRCode content={'complex star'} />
           </header>
           <div className={styles.content}>
             {/* <Markdown html={article.html} /> */}
