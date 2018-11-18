@@ -1,13 +1,47 @@
-.container {
-  .article {
-    width: 90%;
-    margin: auto;
+@import '../assets/scss/mixins.scss';
 
-    padding: 30px 30px;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.08),
-      2px -2px 2px rgba(0, 0, 0, 0.08), 2px -2px 2px rgba(0, 0, 0, 0.08),
-      -2px -2px 2px rgba(0, 0, 0, 0.08);
+.recommendation {
+  max-width: 1024px;
+  width: 90%;
+  margin: auto;
+
+  padding: 30px 30px;
+  // background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.header,
+.content {
+  padding: 10px 10px;
+  margin-bottom: 10px;
+  border-radius: 2px;
+  background-color: #ffffff;
+
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.08), 2px -2px 2px rgba(0, 0, 0, 0.08),
+    2px -2px 2px rgba(172, 143, 143, 0.08), -2px -2px 2px rgba(0, 0, 0, 0.08);
+}
+
+.header {
+  @include flex-container;
+
+  div {
+    h3 {
+      margin-bottom: 10px;
+    }
+
+    ul {
+      @include flex-container;
+      justify-content: flex-start;
+
+      color: #9fa3b0;
+
+      li + li {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  img {
+    width: 75px;
   }
 }

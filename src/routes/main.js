@@ -4,7 +4,7 @@ import styles from './main.module.scss';
 
 import DataStatistics from '../models/data-statistics';
 import Markdown from '../components/markdown';
-// import Qrcode from '../components/qrcode';
+import Qrcode from '../components/qrcode';
 
 export default class Main extends Component {
   constructor(props) {
@@ -42,17 +42,18 @@ export default class Main extends Component {
     return (
       <section className={styles.container}>
         <DataStatistics data={data} />
-        <div className={styles.article}>
-          <div className={styles.article.header}>
+        <div className={styles.recommendation}>
+          <div className={styles.header}>
             <div>
               <h3>Linksystem & Blog 创作思路</h3>
               <ul>
                 <li>zhi</li>
-                <li>2018年10月20日</li>
+                <li>2018/10/20</li>
               </ul>
             </div>
+            <Qrcode content={'complex star'} />
           </div>
-          <div>
+          <div className={styles.content}>
             <Markdown html={html} />
           </div>
         </div>

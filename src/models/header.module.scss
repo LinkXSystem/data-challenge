@@ -48,10 +48,15 @@
 
 .navbar {
   @include flex-container;
+  // max-width: 1024px;
+  // margin: 0 auto;
 
   img {
+    display: inline-block;
     width: 64px;
     height: 64px;
+
+    margin-left: 20px;
   }
 
   ul {
@@ -64,6 +69,10 @@
       a {
         font-size: 18px;
       }
+    }
+
+    li + li {
+      margin-left: 20px;
     }
 
     li::before,
@@ -97,10 +106,6 @@
     li:hover::after {
       transform: inherit;
       opacity: 1;
-    }
-
-    li + li {
-      margin-left: 20px;
     }
   }
 }
