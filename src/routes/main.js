@@ -29,6 +29,24 @@ export default class Main extends Component {
           words: 512,
           date: '2018年10月30日',
         },
+        {
+          title: 'Linksystem & Blog 创作思路',
+          author: 'zhi',
+          words: 1024,
+          date: '2018年10月20日',
+        },
+        {
+          title: 'Linksystem & Blog 部署方案',
+          author: 'zhi',
+          words: 2048,
+          date: '2018年10月25日',
+        },
+        {
+          title: 'Linksystem & Blog 更新计划',
+          author: 'zhi',
+          words: 512,
+          date: '2018年11月1日',
+        },
       ],
       html: '> G2 数据可视化项目',
     };

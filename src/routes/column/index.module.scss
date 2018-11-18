@@ -1,6 +1,6 @@
 @import '../../assets/scss/variables.scss';
 
-.article {
+.column {
   position: relative;
   max-width: 1024px;
   width: 90%;
@@ -8,20 +8,6 @@
   margin: 0 auto;
   padding: 10px 10px;
   overflow: hidden;
-
-  div {
-    max-height: 300px;
-    overflow: hidden;
-
-    img {
-      display: block;
-      width: calc(100% - 4px);
-      margin: 0 auto;
-      border-top-left-radius: 2px;
-      border-top-right-radius: 2px;
-      box-shadow: $box-shadow;
-    }
-  }
 
   article {
     border-radius: 2px;
