@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import styles from './index.module.scss';
 export default class Editor extends Component {
   constructor(props) {
     super(props);
@@ -9,14 +9,18 @@ export default class Editor extends Component {
   render() {
     return (
       <section className="container">
-        <div>
-          <ul>
-            <li>
-              <i className="anticon icon-stepforward" />
-            </li>
-          </ul>
+        <div className={styles.editor}>
+          <div className={styles.toolbar}>
+            <div>
+              <i className="anticon icon-plussquareo" />
+              <i className="anticon icon-link" />
+            </div>
+            <div>
+              <i className="anticon icon-cloudo" />
+            </div>
+          </div>
+          <textarea name="inspiration" />
         </div>
-        <textarea name="inspiration" />
       </section>
     );
   }
