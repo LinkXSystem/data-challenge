@@ -3,7 +3,14 @@ import Header from './models/header';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import logo from './assets/images/logo.svg';
-import { Main, Article, ArticleDetail, Column, ColumnDetail } from './routes';
+import {
+  Main,
+  Article,
+  ArticleDetail,
+  Column,
+  ColumnDetail,
+  Editor,
+} from './routes';
 
 export default class App extends Component {
   constructor() {
@@ -44,6 +51,7 @@ export default class App extends Component {
               <Route path="/article" component={Article} />
               <Route path="/column/:uuid/detail" component={ColumnDetail} />
               <Route path="/column" component={Column} />
+              <Route path="/editor" component={Editor} />
             </Switch>
           </div>
         </BrowserRouter>

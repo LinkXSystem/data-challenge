@@ -7,6 +7,17 @@ export default class Editor extends Component {
   }
 
   render() {
-    return <section className="container" />;
+    return (
+      <section className="container">
+        <div>
+          <ul>
+            <li>
+              <i className="anticon icon-stepforward" />
+            </li>
+          </ul>
+        </div>
+        <textarea name="inspiration" />
+      </section>
+    );
   }
 }
