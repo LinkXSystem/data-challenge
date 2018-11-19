@@ -1,28 +1,35 @@
 @import './assets/scss/variables.scss';
+@import './assets/scss/mixins.scss';
 
 .search {
+  @include flex-container;
+
   label {
     padding: 0.25em;
 
     i {
+      margin-left: 0em;
       color: #ffffff;
     }
 
     input {
-      margin-left: 1em;
+      margin-left: 0.5em;
       border: 0px;
       outline: 0px;
+      color: #ffffff;
+      font-size: 1.25em;
       background-color: inherit;
     }
 
-    transition: all 0.3s ease-in;
+    transition: all 0.1s ease-in;
   }
 
   label:hover {
-    border: 1px solid $border-color;
+    box-shadow: 0px -1px 0px #ffffff inset;
   }
 
-  i {
-    font-size: 1.25em;
+  & > i {
+    font-size: 1.5em;
+    margin-left: 1em;
   }
 }

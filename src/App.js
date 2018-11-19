@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Header from './models/header';
 import Footer from './models/footer';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, withRouter } from 'react-router-dom';
 
 import logo from './assets/images/logo.svg';
 import {
@@ -40,29 +40,26 @@ export default class App extends Component {
     };
   }
 
+  github() {
+    window.location.href =
+      'https://github.com/LinkXSystem/visualization-system';
+  }
+
   render() {
     const { routers, marker } = this.state;
-
+    const HeaderRouter = withRouter(Header);
     return (
       <section className="container">
         <BrowserRouter>
           <React.Fragment>
-            <Header routers={routers} marker={marker}>
-              <div className={styles.search}>
-                <label>
-                  <i className="linksystem icon-search1" />
-                  <input type="text" />
-                </label>
-                <i className="linksystem icon-github" />
-              </div>
-            </Header>
+            <HeaderRouter routers={routers} marker={marker} />
             <Switch>
               <Route exact path="/" component={Main} />
+              <Route path="/editor" component={Editor} />
               <Route path="/article/:uuid/detail" component={ArticleDetail} />
               <Route path="/article" component={Article} />
               <Route path="/column/:uuid/detail" component={ColumnDetail} />
               <Route path="/column" component={Column} />
-              <Route path="/editor" component={Editor} />
             </Switch>
             <Footer />
           </React.Fragment>

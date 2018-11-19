@@ -46,6 +46,16 @@
   }
 }
 
+.active {
+  color: red;
+
+  &::before,
+  &::after {
+    transform: inherit !important;
+    opacity: 1 !important;
+  }
+}
+
 .navbar {
   @include flex-container;
   // max-width: 1024px;
@@ -59,24 +69,24 @@
     margin-right: 20px;
   }
 
-  ul {
+  div {
     @include flex-container;
 
-    li {
+    a {
       position: relative;
       padding: 5px 0px;
 
-      a {
-        font-size: 18px;
-      }
+      font-size: 18px;
+      text-decoration: none;
+      color: #ffffff;
     }
 
-    li + li {
+    a + a {
       margin-left: 20px;
     }
 
-    li::before,
-    li::after {
+    a::before,
+    a::after {
       position: absolute;
 
       display: block;
@@ -90,20 +100,20 @@
       transition: all 0.3s ease-in-out;
     }
 
-    li::before {
+    a::before {
       top: 0px;
       left: 0px;
       transform: translate(-100%);
     }
 
-    li::after {
+    a::after {
       bottom: 0px;
       right: 0px;
       transform: translate(100%);
     }
 
-    li:hover::before,
-    li:hover::after {
+    a:hover::before,
+    a:hover::after {
       transform: inherit;
       opacity: 1;
     }
