@@ -27,10 +27,6 @@ export default class QRCode extends Component {
     this.draw();
   }
 
-  shouldComponentUpdate() {
-    // this.draw();
-  }
-
   render() {
     return <img src={this.state.image} alt="code" />;
   }

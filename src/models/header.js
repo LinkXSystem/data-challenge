@@ -8,10 +8,22 @@ import styles from './header.module.scss';
 export default class Header extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      main: false,
+    };
 
     this.router = this.router.bind(this);
     this.marker = this.marker.bind(this);
+  }
+
+  static getDerivedStateFromProps(next) {
+    const { location } = next;
+
+    if (location.pathname !== '/') {
+      return null;
+    }
+
+    return next;
   }
 
   router() {
@@ -41,10 +53,16 @@ export default class Header extends Component {
   }
 
   render() {
-    const { children } = this.props;
+    const { children, location } = this.props;
+    const status = location.pathname === '/';
 
     return (
-      <section className={styles.container}>
+      <section
+        className={styles.container}
+        style={{
+          overflow: status ? 'inherit' : 'hidden',
+        }}
+      >
         <div className={styles.navbar}>
           {this.marker()}
           {this.router()}
@@ -58,4 +76,7 @@ export default class Header extends Component {
 Header.propTypes = {
   routers: PropTypes.array.isRequired,
   marker: PropTypes.string.isRequired,
+  match: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
+  history: PropTypes.object.isRequired,
 };

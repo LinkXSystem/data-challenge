@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import { Chart, Axis, Bar, Tooltip, Legend } from 'viser-react';
+import styles from './data-statistics.module.scss';
 
 export default class DataStatistics extends Component {
   constructor(props) {
@@ -40,8 +41,8 @@ export default class DataStatistics extends Component {
     const { template, scale } = this.state;
 
     return (
-      <section className="container">
-        <Chart forceFit height={420} data={data} scale={scale} renderer="svg">
+      <section className={styles.container}>
+        <Chart forceFit height={420} data={data} scale={scale}>
           <Tooltip
             itemTpl={template}
             showTitle={false}

@@ -2,6 +2,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 // scss 模块
+import './assets/scss/animation.scss';
 import './assets/scss/reset.scss';
 import './assets/scss/chart.scss';
 

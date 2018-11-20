@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './models/header';
 import Footer from './models/footer';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { BrowserRouter, Route, Switch, withRouter } from 'react-router-dom';
 
 import logo from './assets/images/logo.svg';
@@ -45,14 +46,15 @@ export default class App extends Component {
       'https://github.com/LinkXSystem/visualization-system';
   }
 
-  render() {
+  router(location) {
     const { routers, marker } = this.state;
     const HeaderRouter = withRouter(Header);
+
     return (
-      <section className="container">
-        <BrowserRouter>
-          <React.Fragment>
-            <HeaderRouter routers={routers} marker={marker} />
+      <React.Fragment>
+        <HeaderRouter routers={routers} marker={marker} />
+        <TransitionGroup>
+          <CSSTransition key={location.key} classNames="fade" timeout={300}>
             <Switch>
               <Route exact path="/" component={Main} />
               <Route path="/editor" component={Editor} />
@@ -61,8 +63,18 @@ export default class App extends Component {
               <Route path="/column/:uuid/detail" component={ColumnDetail} />
               <Route path="/column" component={Column} />
             </Switch>
-            <Footer />
-          </React.Fragment>
+          </CSSTransition>
+        </TransitionGroup>
+        <Footer />
+      </React.Fragment>
+    );
+  }
+
+  render() {
+    return (
+      <section className="container">
+        <BrowserRouter>
+          <Route render={({ location }) => this.router(location)} />
         </BrowserRouter>
       </section>
     );
