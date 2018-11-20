@@ -58,9 +58,9 @@ export default class App extends Component {
             <Switch>
               <Route exact path="/" component={Main} />
               <Route path="/editor" component={Editor} />
-              <Route path="/article/:uuid/detail" component={ArticleDetail} />
+              <Route path="/article/:uuid" component={ArticleDetail} />
               <Route path="/article" component={Article} />
-              <Route path="/column/:uuid/detail" component={ColumnDetail} />
+              <Route path="/column/:uuid" component={ColumnDetail} />
               <Route path="/column" component={Column} />
             </Switch>
           </CSSTransition>
