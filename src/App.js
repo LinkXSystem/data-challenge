@@ -12,6 +12,7 @@ import {
   Column,
   ColumnDetail,
   Editor,
+  Introduce,
 } from './routes';
 
 import styles from './app.module.scss';
@@ -52,7 +53,15 @@ export default class App extends Component {
 
     return (
       <React.Fragment>
-        <HeaderRouter routers={routers} marker={marker} />
+        <HeaderRouter routers={routers} marker={marker}>
+          <div className={styles.search}>
+            <label>
+              <i className="linksystem icon-search1" />
+              <input type="text" />
+            </label>
+            <i className="linksystem icon-github" />
+          </div>
+        </HeaderRouter>
         <TransitionGroup>
           <CSSTransition key={location.key} classNames="fade" timeout={300}>
             <Switch>
@@ -62,6 +71,7 @@ export default class App extends Component {
               <Route path="/article" component={Article} />
               <Route path="/column/:uuid" component={ColumnDetail} />
               <Route path="/column" component={Column} />
+              <Route path="/introduce" component={Introduce} />
             </Switch>
           </CSSTransition>
         </TransitionGroup>

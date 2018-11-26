@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 // import Markdown from '../../components/markdown';
-import QRCode from '../../components/qr-code';
+import QRCode from '../../components/qrcode';
 
 import styles from './detail.module.scss';
 
@@ -17,7 +17,7 @@ export default class ArticleDetail extends Component {
     const { article } = this.state;
 
     return (
-      <section className="container">
+      <section className={styles.container}>
         <article className={styles.article}>
           <header className={styles.header}>
             <div>

@@ -61,6 +61,6 @@ export default class Column extends Component {
   }
 
   render() {
-    return <section className="container">{this.list()}</section>;
+    return <section className={styles.container}>{this.list()}</section>;
   }
 }

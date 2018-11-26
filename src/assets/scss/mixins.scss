@@ -1,5 +1,8 @@
 @import './variables.scss';
 
+@mixin module-container {
+  padding: 1.5em 0em;
+}
 @mixin font(
   $font-size: 16px,
   $font-weight: 0,
@@ -21,4 +24,10 @@
   flex-direction: $flex-direction;
   align-items: $align-items;
   justify-content: $justify-content;
+}
+@mixin center-container($position: fixed) {
+  position: $position;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

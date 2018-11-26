@@ -1,4 +1,9 @@
 @import '../../assets/scss/variables.scss';
+@import '../../assets/scss/mixins.scss';
+
+.container {
+  @include module-container;
+}
 
 .column {
   position: relative;

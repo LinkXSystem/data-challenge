@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { NavLink } from 'react-router-dom';
 import styles from './index.module.scss';
 export default class ArticleDetail extends Component {
   constructor(props) {
@@ -50,7 +50,9 @@ export default class ArticleDetail extends Component {
               {!item.background || <img src={item.background} alt="" />}
             </div>
             <article>
-              <h3>{item.title}</h3>
+              <NavLink to="/article/xxxx">
+                <h3>{item.title}</h3>
+              </NavLink>
               <ul>
                 <li>{item.author}</li>
                 <li>{item.time}</li>
@@ -64,6 +66,6 @@ export default class ArticleDetail extends Component {
   }
 
   render() {
-    return <section className="container">{this.list()}</section>;
+    return <section className={styles.container}>{this.list()}</section>;
   }
 }

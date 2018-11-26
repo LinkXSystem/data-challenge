@@ -4,7 +4,7 @@ import styles from './main.module.scss';
 
 import DataStatistics from '../models/data-statistics';
 import Markdown from '../components/markdown';
-import QRCode from '../components/qr-code';
+import QRCode from '../components/qrcode';
 
 export default class Main extends Component {
   constructor(props) {
