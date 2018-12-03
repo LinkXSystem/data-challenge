@@ -83,7 +83,7 @@ export default class App extends Component {
   render() {
     return (
       <section className="container">
-        <BrowserRouter>
+        <BrowserRouter basename="/system">
           <Route render={({ location }) => this.router(location)} />
         </BrowserRouter>
       </section>

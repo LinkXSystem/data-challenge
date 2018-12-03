@@ -1,8 +1,8 @@
-'use strict';
-
 const path = require('path');
 const fs = require('fs');
 const url = require('url');
+
+const multi = require('./multi');
 
 // Make sure any symlinks in the project folder are resolved:
 // https://github.com/facebook/create-react-app/issues/637
@@ -45,7 +45,6 @@ module.exports = {
   appBuild: resolveApp('build'),
   appPublic: resolveApp('public'),
   appHtml: resolveApp('public/index.html'),
-  appIndexJs: resolveApp('src/index.js'),
   appPackageJson: resolveApp('package.json'),
   appSrc: resolveApp('src'),
   yarnLockFile: resolveApp('yarn.lock'),
@@ -54,4 +53,8 @@ module.exports = {
   appNodeModules: resolveApp('node_modules'),
   publicUrl: getPublicUrl(resolveApp('package.json')),
   servedPath: getServedPath(resolveApp('package.json')),
+  // single-page
+  // appIndexJs: resolveApp('src/index.js'),
+  // multi-page
+  appIndexJsArray: multi.files(),
 };
