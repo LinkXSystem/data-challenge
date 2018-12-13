@@ -11,8 +11,10 @@ import {
   ArticleDetail,
   Column,
   ColumnDetail,
-  Editor,
-  Introduce,
+  ArticleEditor,
+  ColumnEditor,
+  User,
+  UserConfigure,
 } from './routes';
 
 import styles from './app.module.scss';
@@ -66,12 +68,14 @@ export default class App extends Component {
           <CSSTransition key={location.key} classNames="fade" timeout={300}>
             <Switch>
               <Route exact path="/" component={Main} />
-              <Route path="/editor" component={Editor} />
               <Route path="/article/:uuid" component={ArticleDetail} />
               <Route path="/article" component={Article} />
               <Route path="/column/:uuid" component={ColumnDetail} />
               <Route path="/column" component={Column} />
-              <Route path="/introduce" component={Introduce} />
+              <Route path="/editor/article" component={ArticleEditor} />
+              <Route path="/editor/column" component={ColumnEditor} />
+              <Route path="/user" component={User} />
+              <Route path="/user/configure" component={UserConfigure} />
             </Switch>
           </CSSTransition>
         </TransitionGroup>

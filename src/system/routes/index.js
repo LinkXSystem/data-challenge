@@ -3,8 +3,10 @@ import Article from './article';
 import ArticleDetail from './article/detail';
 import Column from './column';
 import ColumnDetail from './column/detail';
-import Editor from './editor';
-import Introduce from './introduce';
+import ArticleEditor from './editor';
+import ColumnEditor from './editor/column';
+import User from './user';
+import UserConfigure from './user/configure';
 
 export {
   Main,
@@ -12,6 +14,8 @@ export {
   ArticleDetail,
   Column,
   ColumnDetail,
-  Editor,
-  Introduce,
+  ArticleEditor,
+  ColumnEditor,
+  User,
+  UserConfigure,
 };

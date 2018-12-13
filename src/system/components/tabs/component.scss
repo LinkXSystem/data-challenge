@@ -1,0 +1,34 @@
+@import '../../assets/scss/variables.scss';
+
+.alex-tabs {
+  overflow: hidden;
+
+  .alex-tabs_header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    border-bottom: 1px solid $border-color;
+
+    div {
+      padding: 1em 1.25em;
+
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .active {
+      color: $theme-color;
+    }
+  }
+
+  .alex-tabs_content {
+    white-space: nowrap;
+    transition: transform 0.3s ease;
+
+    .alex-tabs_content_item {
+      width: 100%;
+      display: inline-block;
+    }
+  }
+}

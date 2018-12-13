@@ -61,6 +61,7 @@ export default class Header extends Component {
         className={styles.container}
         style={{
           overflow: status ? 'inherit' : 'hidden',
+          boxShadow: status ? 'inherit' : '0px 0px 3px 3px rgba(0, 0, 0, 0.04)',
         }}
       >
         <div className={styles.navbar}>
