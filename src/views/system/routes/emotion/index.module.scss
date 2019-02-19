@@ -1,9 +1,27 @@
 @import '@/assets/scss/variables.scss';
+@import '@/assets//scss//mixins.scss';
+
+.container {
+  @include module-container;
+
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.icon {
+  padding: 0.5em;
+  border-radius: 50%;
+  box-shadow: $box-shadow;
+}
 
 .twitter {
-  width: 320px;
+  // width: 320px;
   padding: 0.5em 0.5em;
   border-radius: 2px;
 
   box-shadow: $box-shadow;
+}
+
+.emotion {
+  border-top: 1px solid $border-color;
 }
