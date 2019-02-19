@@ -42,14 +42,18 @@ const files = () => {
 
   let result = [];
 
-  fs.readdirSync(root).map(item => {
-    const target = resolveApp([root, item, 'index.js']);
+  fs.readdirSync(path.resolve(root, './views')).map(item => {
+    const target = resolveApp([root, './views', item, 'index.js']);
     fs.statSync(target);
     result.push({
       name: item,
       path: target,
     });
   });
+
+  console.log('======================================');
+  console.log(result);
+  console.log('======================================');
 
   return result;
 };

@@ -1,0 +1,15 @@
+@import '@/assets/scss/variables.scss';
+@import '@/assets/scss/mixins.scss';
+
+.container {
+  @include flex-container;
+  max-width: 1024px;
+
+  margin: auto;
+  padding: 2em 0em;
+  border-top: 1px solid $border-color;
+
+  img {
+    width: 2em;
+  }
+}
