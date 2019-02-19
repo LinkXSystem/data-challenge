@@ -5,6 +5,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const appDirectory = fs.realpathSync(process.cwd());
 
+const config = require('./config');
+
 const resolveApp = relativePath => {
   if (relativePath instanceof Array) {
     return path.resolve(appDirectory, ...relativePath);
@@ -42,18 +44,14 @@ const files = () => {
 
   let result = [];
 
-  fs.readdirSync(path.resolve(root, './views')).map(item => {
-    const target = resolveApp([root, './views', item, 'index.js']);
+  fs.readdirSync(path.resolve(root, config.pages)).map(item => {
+    const target = resolveApp([root, config.pages, item, 'index.js']);
     fs.statSync(target);
     result.push({
       name: item,
       path: target,
     });
   });
-
-  console.log('======================================');
-  console.log(result);
-  console.log('======================================');
 
   return result;
 };
@@ -89,15 +87,21 @@ const plugins = (config, name) => {
   return temps;
 };
 
-const rewrites = (config, name) => {
+const rewrites = (pages, name) => {
   const rewrites = [];
 
-  config[name].map(item =>
+  pages[name].map(item => {
     rewrites.push({
       from: new RegExp(`^/${item.name}/*`),
       to: `/${item.name}.html`,
-    }),
-  );
+    });
+  });
+
+  if (config.redirect) {
+    rewrites.push(config.redirect);
+  }
+
+  console.log(rewrites);
 
   return rewrites;
 };
