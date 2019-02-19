@@ -13,6 +13,7 @@ import {
   ColumnDetail,
   ArticleEditor,
   ColumnEditor,
+  Emotion,
   User,
   UserConfigure,
 } from './routes';
@@ -39,6 +40,11 @@ export default class App extends Component {
           icon: '',
           href: '/column',
         },
+        {
+          label: 'Emotion',
+          icon: '',
+          href: '/emotion',
+        },
       ],
       marker: logo,
     };
@@ -58,24 +64,25 @@ export default class App extends Component {
         <HeaderRouter routers={routers} marker={marker}>
           <div className={styles.search}>
             <label>
-              <i className="linksystem icon-search1" />
-              <input type="text" />
+              <i className='linksystem icon-search1' />
+              <input type='text' />
             </label>
-            <i className="linksystem icon-github" />
+            <i className='linksystem icon-github' />
           </div>
         </HeaderRouter>
         <TransitionGroup>
-          <CSSTransition key={location.key} classNames="fade" timeout={300}>
+          <CSSTransition key={location.key} classNames='fade' timeout={300}>
             <Switch>
-              <Route exact path="/" component={Main} />
-              <Route path="/article/:uuid" component={ArticleDetail} />
-              <Route path="/article" component={Article} />
-              <Route path="/column/:uuid" component={ColumnDetail} />
-              <Route path="/column" component={Column} />
-              <Route path="/editor/article" component={ArticleEditor} />
-              <Route path="/editor/column" component={ColumnEditor} />
-              <Route path="/user" component={User} />
-              <Route path="/user/configure" component={UserConfigure} />
+              <Route exact path='/' component={Main} />
+              <Route path='/article/:uuid' component={ArticleDetail} />
+              <Route path='/article' component={Article} />
+              <Route path='/column/:uuid' component={ColumnDetail} />
+              <Route path='/column' component={Column} />
+              <Route path='/editor/article' component={ArticleEditor} />
+              <Route path='/editor/column' component={ColumnEditor} />
+              <Route path='/emotion' component={Emotion} />
+              <Route path='/user' component={User} />
+              <Route path='/user/configure' component={UserConfigure} />
             </Switch>
           </CSSTransition>
         </TransitionGroup>
@@ -86,8 +93,8 @@ export default class App extends Component {
 
   render() {
     return (
-      <section className="container">
-        <BrowserRouter basename="/system">
+      <section className='container'>
+        <BrowserRouter basename='/system'>
           <Route render={({ location }) => this.router(location)} />
         </BrowserRouter>
       </section>

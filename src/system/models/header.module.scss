@@ -77,9 +77,10 @@
       position: relative;
       padding: 5px 0px;
 
-      font-size: 18px;
+      font-size: 16px;
       text-decoration: none;
       color: #ffffff;
+      font-weight: bold;
     }
 
     a + a {
@@ -93,7 +94,7 @@
       display: block;
       content: '';
       width: 40%;
-      height: 1px;
+      height: 2px;
       opacity: 0;
 
       background-color: #ffffff;

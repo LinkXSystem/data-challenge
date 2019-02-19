@@ -1,12 +1,6 @@
-import React, { Component } from 'react';
+import Timeline from './line';
+import TimelineItem from './item';
 
-export default class Timeline extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+import './style/index.scss';
 
-  render() {
-    return <section className="container" />;
-  }
-}
+export { Timeline, TimelineItem };

@@ -1,0 +1,24 @@
+.skeleton-time-line_item {
+  display: flex;
+  //   align-items: flex-start;
+
+  .sidebar {
+    display: flex;
+
+    // height: 100%;
+
+    .icon {
+      display: inherit;
+    }
+
+    .line {
+      width: 0.25em;
+      //   height: 100%;
+      background: red;
+    }
+  }
+
+  .content {
+    display: flex;
+  }
+}
