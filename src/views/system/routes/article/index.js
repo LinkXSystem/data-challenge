@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './index.module.scss';
+
 export default class ArticleDetail extends Component {
   constructor(props) {
     super(props);
@@ -47,10 +48,10 @@ export default class ArticleDetail extends Component {
         {articles.map((item, i) => (
           <div key={i} className={styles.article}>
             <div>
-              {!item.background || <img src={item.background} alt="" />}
+              {!item.background || <img src={item.background} alt='' />}
             </div>
             <article>
-              <NavLink to="/article/xxxx">
+              <NavLink to='/article/xxxx'>
                 <h3>{item.title}</h3>
               </NavLink>
               <ul>

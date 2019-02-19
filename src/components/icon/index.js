@@ -6,7 +6,7 @@ import classes from '@/lib/classes';
 import './style/index.scss';
 
 export default function Icon({ name }) {
-  return <i className={classes(['linksystem', name])} />;
+  return <i className={classes(['skeleton-icon', 'linksystem', name])} />;
 }
 
 Icon.propTypes = {

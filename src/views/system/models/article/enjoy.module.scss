@@ -1,0 +1,24 @@
+@import '../../../../assets/scss/variables.scss';
+
+.modal {
+  padding: 1em 1em;
+  border-radius: 0.25em;
+  background: #ffffff;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+
+  li {
+    display: inline-block;
+
+    width: 3em;
+    height: 3em;
+    text-align: center;
+    line-height: 3em;
+
+    border-radius: 50%;
+    background: $background-color;
+  }
+}
