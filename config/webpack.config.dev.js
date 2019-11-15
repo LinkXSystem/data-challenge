@@ -10,6 +10,7 @@ const getCSSModuleLocalIdent = require('react-dev-utils/getCSSModuleLocalIdent')
 const getClientEnvironment = require('./env');
 const paths = require('./paths');
 const ManifestPlugin = require('webpack-manifest-plugin');
+const WebpackBuildNotifierPlugin = require('webpack-build-notifier');
 const getCacheIdentifier = require('react-dev-utils/getCacheIdentifier');
 const ModuleNotFoundPlugin = require('react-dev-utils/ModuleNotFoundPlugin');
 
@@ -371,6 +372,11 @@ module.exports = {
       fileName: 'asset-manifest.json',
       publicPath: publicPath,
     }),
+    // When webpack completed, it will notice our !!!
+    new WebpackBuildNotifierPlugin({
+      title: "My Project Webpack Build",
+      suppressSuccess: true
+    })
   ],
 
   // Some libraries import Node modules but don't use them in the browser.
