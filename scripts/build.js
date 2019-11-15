@@ -40,7 +40,17 @@ const WARN_AFTER_CHUNK_GZIP_SIZE = 1024 * 1024;
 const isInteractive = process.stdout.isTTY;
 
 // Warn and crash if required files are missing
-if (!checkRequiredFiles([paths.appHtml, paths.appIndexJs])) {
+if (paths.appIndexJs && !checkRequiredFiles([paths.appHtml, paths.appIndexJs])) {
+  process.exit(1);
+}
+
+if (
+  paths.appIndexJs &&
+  !checkRequiredFiles([
+    paths.appHtml,
+    ...paths.appIndexJsArray.map(item => item.path)
+  ])
+) {
   process.exit(1);
 }
 
@@ -124,6 +134,7 @@ checkBrowsers(paths.appPath, isInteractive)
 function build(previousFileSizes) {
   console.log('Creating an optimized production build...');
 
+  // TODO: 生产环境的 webpack 的配置需要优化
   let compiler = webpack(config);
   return new Promise((resolve, reject) => {
     compiler.run((err, stats) => {
