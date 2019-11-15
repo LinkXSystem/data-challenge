@@ -24,9 +24,9 @@ jobs:
     - name: npm install
       run: |
         npm install
-    - name: npm build
-      run: |
-        npm run build
-      env:
-        # 配置环境变量
-        CI: true
+    # - name: npm build
+    #   run: |
+    #     npm run build
+    #   env:
+    #     # 配置环境变量
+    #     CI: true
