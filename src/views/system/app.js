@@ -63,10 +63,10 @@ export default class App extends Component {
       <React.Fragment>
         <HeaderRouter routers={routers} marker={marker}>
           <div className={styles.search}>
-            <label>
+            {/* <label>
               <i className='linksystem icon-search1' />
               <input type='text' />
-            </label>
+            </label> */}
             <i className='linksystem icon-github' />
           </div>
         </HeaderRouter>

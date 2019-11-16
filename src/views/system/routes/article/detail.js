@@ -22,13 +22,14 @@ export default class ArticleDetail extends Component {
           <header className={styles.header}>
             <div>
               <h3>Linksystem & Blog 创作思路</h3>
-              <ul>
+              {/* <ul>
                 <li>zhi</li>
                 <li>2018/10/20</li>
-              </ul>
+              </ul> */}
             </div>
-            <QRCode content={'complex star'} />
+            <QRCode content={'complex star'} width={120} />
           </header>
+          <div className={styles.feature} />
           <div className={styles.content}>
             {/* <Markdown html={article.html} /> */}
           </div>

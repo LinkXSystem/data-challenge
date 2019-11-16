@@ -22,6 +22,7 @@
 
   header {
     @include flex-container;
+    align-items: flex-start;
 
     div {
       h3 {
@@ -43,5 +44,16 @@
     img {
       width: 75px;
     }
+  }
+
+  .feature {
+    cursor: none;
+
+    height: 0.5em;
+    border-radius: 0.35em;
+    margin-bottom: 10px;
+    box-shadow: $box-shadow;
+
+    background: #ffffff;
   }
 }

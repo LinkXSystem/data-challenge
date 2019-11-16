@@ -59,7 +59,7 @@ export default class Main extends Component {
 
     return (
       <section className={styles.container}>
-        <DataStatistics data={data} />
+        {/* <DataStatistics data={data} /> */}
         <div className={styles.recommendation}>
           <div className={styles.header}>
             <div>

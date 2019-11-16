@@ -49,7 +49,7 @@ export default class Header extends Component {
   marker() {
     const { marker } = this.props;
 
-    return <img src={marker} alt="" />;
+    return <img src={marker} alt='' />;
   }
 
   render() {

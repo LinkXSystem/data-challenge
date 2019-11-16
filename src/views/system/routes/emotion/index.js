@@ -49,11 +49,11 @@ export default class Emotion extends Component {
               <TimelineItem icon={this.icon()}>
                 <div className={styles.twitter}>
                   <p>{item.content}</p>
-                  <div className={styles.emotion}>
+                  {/* <div className={styles.emotion}>
                     <ul>
                       <li />
                     </ul>
-                  </div>
+                  </div> */}
                 </div>
               </TimelineItem>
             ))}
