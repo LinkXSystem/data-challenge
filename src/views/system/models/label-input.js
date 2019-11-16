@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 import styles from './label-input.module.scss';
 
 export default class LabelInput extends Component {
+  static propTypes = {};
+
   constructor(props) {
     super(props);
+
     this.state = {
       labels: [],
       value: '',
@@ -18,7 +21,9 @@ export default class LabelInput extends Component {
 
   label() {
     const { labels } = this.state;
-    return labels.length ? (
+    return !labels.length ? (
+      ''
+    ) : (
       <ul className={styles.label}>
         {labels.map((item, i) => (
           <li key={i}>
@@ -27,8 +32,6 @@ export default class LabelInput extends Component {
           </li>
         ))}
       </ul>
-    ) : (
-      ''
     );
   }
 
@@ -63,7 +66,7 @@ export default class LabelInput extends Component {
       <section className={styles.container}>
         {this.label()}
         <input
-          type="text"
+          type='text'
           value={this.state.value}
           onChange={this.handleChange}
           onKeyUp={this.cache}
@@ -72,5 +75,3 @@ export default class LabelInput extends Component {
     );
   }
 }
-
-LabelInput.propTypes = {};
