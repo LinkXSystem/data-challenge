@@ -7,6 +7,12 @@
         {
             "type": "node",
             "request": "launch",
+            "name": "Runtime Debugger",
+            "program": "${workspaceFolder}\\scripts\\start.js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
             "name": "Package Debugger",
             "program": "${workspaceFolder}\\scripts\\build.js"
         }
