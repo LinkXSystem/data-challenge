@@ -59,5 +59,5 @@ QRCode.defaultProps = {
 QRCode.propTypes = {
   content: PropTypes.string.isRequired,
   config: PropTypes.object,
-  width: PropTypes.string,
+  width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
