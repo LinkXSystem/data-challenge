@@ -15,7 +15,7 @@ const resolveApp = relativePath => {
   return path.resolve(appDirectory, relativePath);
 };
 
-const files = () => {
+const files = function() {
   const root = resolveApp('src');
 
   const status = fs.statSync(root);
@@ -56,7 +56,7 @@ const files = () => {
   return result;
 };
 
-const entry = (config, name) => {
+const entry = function(config, name) {
   let obj = {};
 
   config[name].map(
@@ -70,7 +70,7 @@ const entry = (config, name) => {
   return obj;
 };
 
-const plugins = (config, name) => {
+const plugins = function(config, name) {
   let temps = [];
 
   config[name].map(item =>
@@ -87,7 +87,7 @@ const plugins = (config, name) => {
   return temps;
 };
 
-const rewrites = (pages, name) => {
+const rewrites = function(pages, name) {
   const rewrites = [];
 
   pages[name].map(item => {
@@ -100,15 +100,21 @@ const rewrites = (pages, name) => {
   if (config.redirect) {
     rewrites.push(config.redirect);
   }
-
-  console.log(rewrites);
-
+  
   return rewrites;
 };
+
+const isMultiple = function() {
+  return config.multi;
+};
+
+const logger = function() {};
 
 module.exports = {
   rewrites,
   files,
   entry,
   plugins,
+  logger,
+  isMultiple,
 };
